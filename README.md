@@ -63,51 +63,72 @@ DB_NAME="Task_Manager"
 DB_HOST="localhost" 
 PORT=3000
 ```
-
 ## Usage
-### Running the Application Locally
-- Start the server:  ```npm start```
-- Access the application:  Open your browser and navigate to http://localhost:3000.  
-- Using the Application Register a new user: Use the ```/api/register``` endpoint to create a new user account.
-- Login: Use the ```/api/login``` endpoint to authenticate and receive a JWT token.
-- Manage tasks: Use the provided API endpoints to create, read, update, and delete tasks.
-  
-## API Endpoints
-### Authentication
-- POST /api/register: Register a new user.  
-**Request Body**: { "username": "your_username", "password": "your_password" }
-**Response**: { "message": "User registered successfully" }```
 
-- POST /api/login: Login a user and get a JWT token.  
-**Request Body**: { "username": "your_username", "password": "your_password" }
-**Response**: { "token": "your_jwt_token" }
+### Running the Application Locally
+
+- **Start the server:**
+
+    ```sh
+    npm start
+    ```
+
+- **Access the application:** Open your browser and navigate to `http://localhost:3000`.
+
+### Using the Application
+
+- **Register a new user:** Use the `/api/register` endpoint to create a new user account.
+- **Login:** Use the `/api/login` endpoint to authenticate and receive a JWT token.
+- **Manage tasks:** Use the provided API endpoints to create, read, update, and delete tasks.
+
+## API Endpoints
+
+### Authentication
+
+- **POST /api/register:** Register a new user.
+    - **Request Body:** `{ "username": "your_username", "password": "your_password" }`
+    - **Response:** `{ "message": "User registered successfully" }`
+
+- **POST /api/login:** Login a user and get a JWT token.
+    - **Request Body:** `{ "username": "your_username", "password": "your_password" }`
+    - **Response:** `{ "token": "your_jwt_token" }`
 
 ### Tasks
 
-- GET /api/tasks: Get all tasks.
-**Headers**: { "Authorization": "Bearer your_jwt_token" }
-**Response**: [ { "id": 1, "title": "Task 1", "description": "Description 1", "status": "Pending" }, ... ]
+- **GET /api/tasks:** Get all tasks.
+    - **Headers:** `{ "Authorization": "Bearer your_jwt_token" }`
+    - **Response:** `[ { "id": 1, "title": "Task 1", "description": "Description 1", "status": "Pending" }, ... ]`
 
-- POST /api/tasks: Create a new task.  
-**Headers**: { "Authorization": "Bearer your_jwt_token" }
-**Request Body**: { "title": "New Task", "description": "Task description", "status": "Pending" }
-**Response**: { "message": "Task created successfully", "task": { "id": 1, "title": "New Task", "description": "Task description", "status": "Pending" } }
+- **POST /api/tasks:** Create a new task.
+    - **Headers:** `{ "Authorization": "Bearer your_jwt_token" }`
+    - **Request Body:** `{ "title": "New Task", "description": "Task description", "status": "Pending" }`
+    - **Response:** `{ "message": "Task created successfully", "task": { "id": 1, "title": "New Task", "description": "Task description", "status": "Pending" } }`
 
-- GET /api/tasks/:id: Get a task by ID.  
-**Headers**: { "Authorization": "Bearer your_jwt_token" }
-**Response**: { "id": 1, "title": "Task 1", "description": "Description 1", "status": "Pending" }
+- **GET /api/tasks/:id:** Get a task by ID.
+    - **Headers:** `{ "Authorization": "Bearer your_jwt_token" }`
+    - **Response:** `{ "id": 1, "title": "Task 1", "description": "Description 1", "status": "Pending" }`
 
-- PUT /api/tasks/:id: Update a task by ID.  
-**Headers**: { "Authorization": "Bearer your_jwt_token" }
-**Request Bod**y: { "title": "Updated Task", "description": "Updated description", "status": "Completed" }
-**Response**: { "message": "Task updated successfully", "task": { "id": 1, "title": "Updated Task", "description": "Updated description", "status": "Completed" } }
+- **PUT /api/tasks/:id:** Update a task by ID.
+    - **Headers:** `{ "Authorization": "Bearer your_jwt_token" }`
+    - **Request Body:** `{ "title": "Updated Task", "description": "Updated description", "status": "Completed" }`
+    - **Response:** `{ "message": "Task updated successfully", "task": { "id": 1, "title": "Updated Task", "description": "Updated description", "status": "Completed" } }`
 
-- DELETE /api/tasks/:id: Delete a task by ID.  
-**Headers**: { "Authorization": "Bearer your_jwt_token" }
-**Response**: { "message": "Task deleted successfully" }
+- **DELETE /api/tasks/:id:** Delete a task by ID.
+    - **Headers:** `{ "Authorization": "Bearer your_jwt_token" }`
+    - **Response:** `{ "message": "Task deleted successfully" }`
 
 ## Testing
+
 ### Running Tests
-- Run integration tests:  ```npm test```
+
+- **Run integration tests:**
+
+    ```sh
+    npm test
+    ```
+
 ### Writing Tests
-- Unit Tests: Write unit tests for individual functions and modules.
+
+- **Unit Tests:** Write unit tests for individual functions and modules.
+- **Integration Tests:** Write integration tests to test the interaction between different modules and components.
+- **End-to-End Tests:** Write end-to-end tests to test the entire application flow from the user's perspective.
