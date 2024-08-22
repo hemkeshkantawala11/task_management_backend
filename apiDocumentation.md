@@ -101,19 +101,17 @@
 
 ```
 {
-  "message": "Task created successfully",
-  "task": {
     "id": 1,
     "title": "New Task",
     "description": "Task description",
     "status": "Pending"
-  }
 }
+
 ```
 
 ### Get a Task by ID
 
-**Endpoint:** `GET /api/tasks/:id`
+**Endpoint:** `GET /api/tasks?id=1`
 
 **Headers:**
 
@@ -158,13 +156,10 @@
 
 ```
 {
-  "message": "Task updated successfully",
-  "task": {
     "id": 1,
     "title": "Updated Task",
     "description": "Updated description",
     "status": "Completed"
-  }
 }
 ```
 
@@ -182,7 +177,5 @@
 **Response:**
 
 ```
-{
-  "message": "Task deleted successfully"
-}
+No Content to show.
 ```
